@@ -1,0 +1,1121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff2f2;
+    background-image: 
+        linear-gradient(#ffe4e4 1px, transparent 1px),
+        linear-gradient(90deg, #ffe4e4 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Banner flags */
+.banner-flags {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.flags-left, .flags-right {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 30px;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #ff9999,
+        #ff9999 15px,
+        transparent 15px,
+        transparent 30px
+    );
+}
+
+.flags-left {
+    left: 0;
+}
+
+.flags-right {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+/* Content */
+.content {
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    max-width: 1720px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+/* Left side */
+.left-side {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    position: relative;
+}
+
+.happy {
+    font-size: min(120px, 8vw);
+    font-weight: 900;
+    color: #333;
+    line-height: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+.birthday {
+    font-size: min(120px, 8vw);
+    font-weight: 900;
+    color: #ff7777;
+    line-height: 1;
+    animation: fadeInUp 1s ease-out 0.3s;
+}
+
+.party-hat {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    transform: rotate(-15deg) scale(1.3);
+    animation: swing 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+.hat {
+    width: min(40px, 3vw);
+    height: min(40px, 3vw);
+    background-color: #ff7777;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.star {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    color: #333;
+    font-size: min(18px, 1.3vw);
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.date {
+    margin-top: 30px;
+    background-color: #ff9999;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: min(20px, 1.5vw);
+    font-weight: bold;
+}
+
+/* Right side */
+.right-side {
+    flex: 1;
+    margin-left: 430px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-section {
+    position: relative;
+    transform: scale(1.2);
+}
+
+.profile-circle {
+    width: min(300px, 25vw);
+    height: min(300px, 25vw);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ff9999;
+    animation: bounceIn 1s ease-out, float 3s ease-in-out infinite;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff9999;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-size: min(18px, 1.3vw);
+    white-space: nowrap;
+    font-weight: bold;
+    animation: slideInUp 0.5s ease-out 1s backwards;
+}
+
+/* Decorations */
+.decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.smiley {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    width: min(50px, 4vw);
+    height: min(50px, 4vw);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%23ff9999" stroke-width="2"/><circle cx="8" cy="9" r="1.5" fill="%23ff9999"/><circle cx="16" cy="9" r="1.5" fill="%23ff9999"/><path d="M8 14c1.5 2 6 2 8 0" stroke="%23ff9999" stroke-width="2" fill="none"/></svg>');
+    background-size: contain;
+    opacity: 0.7;
+    animation: rotate 20s linear infinite, bounce 2s ease-in-out infinite;
+}
+
+.dots {
+    position: absolute;
+    top: 30px;
+    left: 30%;
+}
+
+.dot {
+    color: #333;
+    font-size: min(30px, 2vw);
+    margin: 0 5px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    background-color: #ff9999;
+    border-radius: 50%;
+    animation: floatBalloon 4s ease-in-out infinite;
+}
+
+/* Bóng bay bên phải ảnh đại diện */
+.balloon:nth-child(1) {
+    width: min(45px, 3.5vw);
+    height: min(45px, 3.5vw);
+    right: -20px;
+    top: 20%;
+}
+
+.balloon:nth-child(2) {
+    width: min(35px, 3vw);
+    height: min(35px, 3vw);
+    right: -40px;
+    top: 40%;
+    opacity: 0.9;
+    animation-delay: 0.8s;
+}
+
+.balloon:nth-child(3) {
+    width: min(40px, 3.2vw);
+    height: min(40px, 3.2vw);
+    right: -15px;
+    top: 60%;
+    opacity: 0.95;
+    animation-delay: 1.6s;
+}
+
+/* Bóng bay rải rác */
+.balloon:nth-child(4) {
+    width: min(30px, 2.5vw);
+    height: min(30px, 2.5vw);
+    left: 30%;
+    top: 15%;
+    opacity: 0.8;
+    animation-delay: 2.4s;
+}
+
+.balloon:nth-child(5) {
+    width: min(35px, 3vw);
+    height: min(35px, 3vw);
+    right: 25%;
+    bottom: 20%;
+    opacity: 0.9;
+    animation-delay: 3.2s;
+}
+
+/* Thêm dây bóng bay */
+.balloon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 25px;
+    background: #ff9999;
+    bottom: -25px;
+    left: 50%;
+    opacity: 0.6;
+}
+
+/* Bubbles animation */
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: bubble-float 8s infinite;
+}
+
+@keyframes bubble-float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+.cake-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.cake-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 192, 203, 0.5));
+    animation: float-cake 4s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.cake-container:hover .cake-image {
+    transform: scale(1.05);
+}
+
+@keyframes float-cake {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.message {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Ribbon styles */
+.ribbon {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: #ff6b6b;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.ribbon-top-left {
+    top: -10px;
+    left: -10px;
+    transform: rotate(-45deg);
+}
+
+.ribbon-bottom-right {
+    bottom: -10px;
+    right: -10px;
+    transform: rotate(45deg);
+}
+
+.ribbon span {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: #ff6b6b;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Image gallery styles */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff6b6b;
+    transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes flicker {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.8); opacity: 0.8; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.card {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animation cho tiêu đề */
+.happy, .birthday {
+    animation: fadeInUp 1s ease-out;
+}
+
+.birthday {
+    animation-delay: 0.3s;
+}
+
+/* Animation cho nón sinh nhật */
+.party-hat {
+    animation: swing 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Animation cho ngôi sao */
+.star {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* Animation cho ảnh đại diện */
+.profile-circle {
+    animation: bounceIn 1s ease-out, float 3s ease-in-out infinite;
+}
+
+/* Animation cho name badge */
+.name-badge {
+    animation: slideInUp 0.5s ease-out 1s backwards;
+}
+
+/* Animation cho bóng bay */
+.balloon {
+    animation: floatBalloon 4s ease-in-out infinite;
+}
+
+.balloon:nth-child(2) { animation-delay: 0.8s; }
+.balloon:nth-child(3) { animation-delay: 1.6s; }
+.balloon:nth-child(4) { animation-delay: 2.4s; }
+.balloon:nth-child(5) { animation-delay: 3.2s; }
+
+/* Animation cho mặt cười */
+.smiley {
+    animation: rotate 20s linear infinite, bounce 2s ease-in-out infinite;
+}
+
+/* Animation cho chấm trang trí */
+.dot {
+    animation: pulse 2s ease-in-out infinite;
+}
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+/* Định nghĩa các keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes floatBalloon {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5px, -10px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Thêm hiệu ứng hover cho các phần tử */
+.profile-circle:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.balloon:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.date:hover {
+    transform: scale(1.05);
+    background-color: #ff8080;
+    transition: all 0.3s ease;
+}
+
+/* Animation cho banner flags */
+.flags-left, .flags-right {
+    animation: waveBanner 3s ease-in-out infinite;
+}
+
+.flags-right {
+    animation-delay: 0.5s;
+}
+
+@keyframes waveBanner {
+    0%, 100% {
+        transform: scaleX(-1) skewY(0);
+    }
+    50% {
+        transform: scaleX(-1) skewY(-1deg);
+    }
+}
+
+/* Pháo giấy */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff9999;
+    border-radius: 0;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+    animation: confettiFall 4s linear infinite, confettiSway 2s ease-in-out infinite;
+}
+
+/* Hình dạng khác nhau cho pháo giấy */
+.confetti:nth-child(3n) {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.confetti:nth-child(4n) {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+/* Màu sắc khác nhau */
+.confetti:nth-child(5n) { background-color: #ff7777; }
+.confetti:nth-child(5n+1) { background-color: #ffb366; }
+.confetti:nth-child(5n+2) { background-color: #99ff99; }
+.confetti:nth-child(5n+3) { background-color: #99ccff; }
+.confetti:nth-child(5n+4) { background-color: #ff99cc; }
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes confettiSway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+/* Music Button Styles */
+.music-button {
+    position: fixed;
+    bottom: 120px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.music-button i {
+    font-size: 24px;
+    color: white
+}
+.music-button img {
+      object-fit: cover;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    background-color: #ff7777;
+}
+
+.music-button.playing {
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Music Hint Styles */
+.music-hint {
+    position: fixed;
+    bottom: 135px;
+    left: 110px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ff7777;
+    animation: float-hint 2s ease-in-out infinite;
+    z-index: 999;
+}
+
+.music-hint .hint-text {
+    background-color: #ff9999;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 10px;
+}
+
+.music-hint i {
+    font-size: 24px;
+    transform: rotate(180deg);
+    animation: bounce-hint 1s ease-in-out infinite;
+}
+
+@keyframes float-hint {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes bounce-hint {
+    0%, 100% {
+        transform: rotate(180deg) translateX(0);
+    }
+    50% {
+        transform: rotate(180deg) translateX(-5px);
+    }
+}
+
+/* Letter Icon Styles */
+.letter-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff9999;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.letter-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.letter-icon:hover {
+    transform: scale(1.1);
+    background-color: #ff7777;
+}
+
+.letter-icon .tooltip {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.letter-icon:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Kitty Image Styles */
+.kitty-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float-kitty 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.kitty-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 153, 153, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.kitty-container:hover .kitty-image {
+    transform: scale(1.1);
+}
+
+@keyframes float-kitty {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Arrow Hint Styles */
+.arrow-hint {
+    position: fixed;
+    bottom: 45px;
+    right: 110px;
+    display: flex;
+    align-items: center;
+    animation: float-hint 2s ease-in-out infinite;
+    z-index: 999;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow-hint i {
+    color: #ff0000;
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.arrow-text {
+    background-color: #ff9999;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 10px;
+}
+
+.arrow-hint i {
+    color: #ff0000;
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+/* Letter Popup Styles */
+.letter-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.letter-popup.show {
+    display: flex;
+}
+
+.letter-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.letter-paper {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.letter-paper h2 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.letter-paper p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.letter-paper ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.letter-paper li {
+    color: #555;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.signature {
+    text-align: right;
+    color: #ff6b6b;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* Birthday GIF Container */
+.birthday-gif-container {
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.birthday-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 192, 203, 0.5));
+   
+}
+
+.birthday-gif-container:hover .birthday-gif {
+    transform: scale(1.05);
+}
+
+@keyframes float-gif {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+.image_music{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Password Layer Styles */
+.password-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 153, 153, 0.98);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.password-container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.password-container h2 {
+    color: #ff7777;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.password-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#passwordInput {
+    padding: 12px 15px;
+    border: 2px solid #ffcece;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#passwordInput:focus {
+    border-color: #ff7777;
+}
+
+#submitPassword {
+    padding: 12px 25px;
+    background-color: #ff7777;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submitPassword:hover {
+    background-color: #ff5555;
+    transform: translateY(-2px);
+}
+
+.password-hint {
+    color: #999;
+    font-size: 14px;
+    margin: 0;
+}
+
+.password-layer.hidden {
+    display: none;
+}

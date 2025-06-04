@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Password Layer -->
+    <div class="password-layer">
+        <div class="password-container">
+            <h2>🔒 Nhập mật khẩu</h2>
+            <div class="password-input-container">
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu...">
+                <button id="submitPassword">Mở khóa 🎁</button>
+            </div>
+            <p class="password-hint">Hint: Ngày sinh nhật của bạn (Ngaythang"xxxx") 💝</p>
+        </div>
+    </div>
+
+    <div class="confetti-container"></div>
+    <div class="container">
+        <!-- Banner flags -->
+        <div class="banner-flags">
+            <div class="flags-left"></div>
+            <div class="flags-right"></div>
+        </div>
+
+        <!-- Main content -->
+        <div class="content">
+            <!-- Left side -->
+            <div class="left-side">
+                <div class="title">
+                    <div class="happy">Happy</div>
+                    <div class="birthday">Birthday</div>
+                    <div class="party-hat">
+                        <div class="hat"></div>
+                        <div class="star">★</div>
+                    </div>
+                </div>
+                <div class="date">16-06-2006</div>
+            </div>
+
+            <!-- Center Kitty -->
+            <div class="kitty-container">
+                <img src="images/pngtree-hello-kitty-in-a-birthday-cake-vector-png-image_6928309.png" alt="Hello Kitty Birthday" class="kitty-image">
+            </div>
+
+            <!-- Birthday GIF -->
+            <div class="birthday-gif-container">
+                <img src="images/happy-birthday-birthday-cake.gif" alt="Birthday Cake GIF" class="birthday-gif">
+            </div>
+
+            <!-- Right side -->
+            <div class="right-side">
+                <div class="profile-section">
+                    <div class="profile-circle">
+                        <img src="images/h2.jpg" alt="Profile Picture">
+                    </div>
+                    <div class="name-badge">Võ Thị Hồng Nhung</div>
+                </div>
+            </div>
+
+            <!-- Decorations -->
+            <div class="decorations">
+                <div class="smiley"></div>
+                <div class="dots">
+                    <span class="dot">•</span>
+                    <span class="dot">•</span>
+                </div>
+                <div class="balloons">
+                    <div class="balloon"></div>
+                    <div class="balloon"></div>
+                    <div class="balloon"></div>
+                    <div class="balloon"></div>
+                    <div class="balloon"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Button -->
+        <div class="music-button">
+            <img src="images/h1.jpg" alt="Music Note" class="image_music">
+        </div>
+        
+        <!-- Music Hint -->
+        <div class="music-hint">
+            <i class="fas fa-arrow-right"></i>
+            <span class="hint-text">Click để nghe nhạc! 🎵</span>
+        </div>
+
+        <!-- Arrow Hint -->
+        <div class="arrow-hint">
+            <span class="arrow-text">Có thư cho bạn!</span>
+            <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="bgMusic" loop>
+            <source src="music/SinhNhat-HIEUTHUHAI-6350582.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- Letter Icon and Popup -->
+        <div class="letter-icon">
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Click để mở thư! 💌</span>
+            <div class="hint-ring"></div>
+        </div>
+        
+        <div class="letter-popup">
+            <div class="letter-content">
+                <span class="close-btn">&times;</span>
+                <div class="letter-paper">
+                    <h2>Gửi bạn Nh 💌</h2>
+                    <p>Chúc mừng sinh nhật bạn! Tuy là chx có tới ngày nhma coi đây lafquaf sớm đi và N muốn nói vs Nh là:</p>
+                    <ul>
+                        <li>🌟 Chúc Nh luôn vui vẻ, hạnh phúc và tràn đầy năng lượng</li>
+                        <li>🎓 Học tập và công việc thuận lợi, đạt được mọi mục tiêu</li>
+                        <li>💪 Sức khỏe dồi dào, tinh thần lạc quan</li>
+                        <li>💝 Tình yêu và tình bạn luôn đẹp như ý</li>
+                        <li>✨ Mọi ước mơ đều thành hiện thực</li>
+                        <li>Thời gian mình trò chuyện N thật sự rất vui, Cảm ơn vì tất cả.</li>
+                    </ul>
+                    <p>Chúc Nh có một sinh nhật thật ý nghĩa và đáng nhớ!</p>
+                    <div class="signature">
+                        Thân mến,<br>
+                        Hn_Bap
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- Font Awesome for envelope icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html> 
